@@ -100,6 +100,6 @@ func SetBodyStyle(excel *excelize.File,sheetName string ,rowStart,len,high int) 
 	}
 	//rows:=excel.GetRows(sheetName)
 	if len>0{
-		excel.SetCellStyle(sheetName,"A"+strconv.Itoa(rowStart),GetNumToExcelABCD(len-1)+strconv.Itoa(high+1),style)
+		excel.SetCellStyle(sheetName,"A"+strconv.Itoa(rowStart),GetNumToExcelABCD(len-1)+strconv.Itoa(high+rowStart-1),style)
 	}
 }
