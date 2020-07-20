@@ -1,4 +1,4 @@
-module gomicro/codectools
+module codectools
 
 go 1.14
 
