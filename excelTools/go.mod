@@ -1,4 +1,4 @@
-module excelTools
+module github.com/xfengw/mytools/excelTools
 
 go 1.14
 
