@@ -1,4 +1,4 @@
-module codectools
+module github.com/xfengw/mytools/codectools
 
 go 1.14
 
