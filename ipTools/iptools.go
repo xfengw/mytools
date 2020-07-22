@@ -9,7 +9,7 @@ import (
 	"strconv"
 	"strings"
 )
-//判断IP地址是否在以-标记的IP段数组中，比如判断Ip是否在电信机房的所有IP段内
+//判断IP地址是否在以-标记的IP段数组中，比如判断Ip是否在电信机房的所有IP段内[112.67.253.192-112.67.253.199 124.225.167.0-124.225.167.255]
 func IpIsInIpsegsByline(ip net.IP,ipsegs []string)bool{
     is :=false
     if len(ipsegs)==0{
