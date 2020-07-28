@@ -3,8 +3,6 @@ package ipTools
 import (
 	"fmt"
 	"log"
-
-	//"encoding/binary"
 	"net"
 	"strconv"
 	"strings"
@@ -18,7 +16,7 @@ func IpIsInIpsegsByline(ip net.IP,ipsegs []string)bool{
     for _,ipseg :=range ipsegs{
 
         if ipseg==""{continue}
-fmt.Println(ip.String(),ipseg)
+// fmt.Println(ip.String(),ipseg)
         is =IpIsInIpsegByline(ip,ipseg)
         if is{return is}
     }
