@@ -16,6 +16,7 @@ func IpIsInIpsegsByline(ip net.IP,ipsegs []string)bool{
         return false
     }
     for _,ipseg :=range ipsegs{
+
         if ipseg==""{continue}
 fmt.Println(ip.String(),ipseg)
         is =IpIsInIpsegByline(ip,ipseg)
