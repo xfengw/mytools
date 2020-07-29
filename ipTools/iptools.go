@@ -1,4 +1,4 @@
-package ipTools
+package iptools
 
 import (
 	"fmt"
