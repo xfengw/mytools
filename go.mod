@@ -1,4 +1,4 @@
-module github.com/xfengw/mytools
+module github.com/xfengw/mytools/v1
 
 go 1.14
 require (
