@@ -1,8 +1,8 @@
 package codectools
 
 import (
-	"github.com/axgle/mahonia"
 	"encoding/base64"
+	"github.com/axgle/mahonia"
 	"golang.org/x/net/idna"
 	"math/rand"
 	"strings"
@@ -19,6 +19,7 @@ func StrToByteByCode(src string, srcCode string, targetCode string) []byte {
 	_, tagByte, _ := tagCoder.Translate([]byte(srcResult), true)
 	return tagByte
 }
+
 /*****************************************************************************************
 /   生成指定长度的包含英文大小写和数字的字符串
 ************************************************************************************** */
@@ -34,10 +35,6 @@ func GenerateRandomString(num int) (randomString string) {
 	//fmt.Println(randomString,len(randomString))
 	return
 }
-/*****************************************************************************************
-/   生成指定长度的包含英文大小写和数字的字符串
-************************************************************************************** */
-
 
 func PunycodeToUnicode(domain string) (newdomain string) {
 	newdomain = domain
@@ -60,14 +57,14 @@ func CodeConvertByEncode(src string, srcCode string, tagCode string) string {
 	return result
 }
 
-func Base64GbkToUtf8(s string)string{
-	if !strings.Contains(s,"=?GB2312?B?"){
+func MailBase64GbkToUtf8(s string) string {
+	if !strings.Contains(s, "=?GB2312?B?") {
 		return s
 	}
-	basestrings := strings.Split(s,"=?GB2312?B?")
+	basestrings := strings.Split(s, "=?GB2312?B?")
 	//fmt.Println(basestrings[1])
-	basestr :=strings.Split(basestrings[1],"==?=")
+	basestr := strings.Split(basestrings[1], "==?=")
 	//fmt.Println(basestr[0])
 	gbkbyte, _ := base64.RawURLEncoding.DecodeString(basestr[0])
-	return CodeConvertByEncode(string(gbkbyte),"gbk","utf-8")
+	return CodeConvertByEncode(string(gbkbyte), "gbk", "utf-8")
 }
